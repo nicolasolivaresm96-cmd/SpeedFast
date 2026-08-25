@@ -2,45 +2,36 @@ public class Main {
 
     public static void main(String[] args) {
 
-        Pedido pedidoComida = new PedidoComida(
-                101,
-                "Los Laureles 150",
-                "Comida"
+        PedidoComida comida = new PedidoComida(
+                1,
+                "Av. Italia 456",
+                4
         );
 
-        Pedido pedidoEncomienda = new PedidoEncomienda(
-                102,
-                "Av. Urmeneta 350",
-                "Encomienda"
+        PedidoEncomienda encomienda = new PedidoEncomienda(
+                2,
+                "Av. Independencia 123",
+                6
         );
 
-        Pedido pedidoExpress = new PedidoExpress(
-                103,
-                "Palmira Romano 200",
-                "Express"
+        PedidoExpress express = new PedidoExpress(
+                3,
+                "Av. Apoquindo 1500",
+                7
         );
 
-        System.out.println("===== PRUEBA DE SOBRESCRITURA =====");
+        comida.mostrarResumen();
+        System.out.println("Tiempo estimado de entrega: "
+                + comida.calcularTiempoEntrega() + " minutos");
         System.out.println();
 
-        pedidoComida.asignarRepartidor();
+        encomienda.mostrarResumen();
+        System.out.println("Tiempo estimado de entrega: "
+                + encomienda.calcularTiempoEntrega() + " minutos");
         System.out.println();
 
-        pedidoEncomienda.asignarRepartidor();
-        System.out.println();
-
-        pedidoExpress.asignarRepartidor();
-
-        System.out.println();
-        System.out.println("===== PRUEBA DE SOBRECARGA =====");
-        System.out.println();
-
-        pedidoComida.asignarRepartidor("Juan Pérez");
-        System.out.println();
-
-        pedidoEncomienda.asignarRepartidor("Camila Soto");
-        System.out.println();
-
-        pedidoExpress.asignarRepartidor("Luis Díaz");
+        express.mostrarResumen();
+        System.out.println("Tiempo estimado de entrega: "
+                + express.calcularTiempoEntrega() + " minutos");
     }
 }
