@@ -3,6 +3,7 @@ public abstract class Pedido {
     private int idPedido;
     private String direccionEntrega;
     private double distanciaKm;
+    private String repartidor;
 
     public Pedido(int idPedido, String direccionEntrega, double distanciaKm) {
         this.idPedido = idPedido;
@@ -29,4 +30,19 @@ public abstract class Pedido {
     }
 
     public abstract int calcularTiempoEntrega();
+
+    public abstract void asignarRepartidor();
+
+    public void asignarRepartidor(String nombre) {
+        this.repartidor = nombre;
+        System.out.println("Repartidor asignado manualmente: " + nombre);
+    }
+
+    public String getRepartidor() {
+        return repartidor;
+    }
+
+    protected void setRepartidor(String repartidor) {
+        this.repartidor = repartidor;
+    }
 }

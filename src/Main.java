@@ -20,18 +20,32 @@ public class Main {
                 7
         );
 
+        System.out.println("=== PEDIDO COMIDA ===");
         comida.mostrarResumen();
-        System.out.println("Tiempo estimado de entrega: "
+        comida.asignarRepartidor();
+        System.out.println("Tiempo estimado: "
                 + comida.calcularTiempoEntrega() + " minutos");
+        comida.despachar();
+        comida.verHistorial();
+
         System.out.println();
 
+        System.out.println("=== PEDIDO ENCOMIENDA ===");
         encomienda.mostrarResumen();
-        System.out.println("Tiempo estimado de entrega: "
+        encomienda.asignarRepartidor("Daniela Tapia");
+        System.out.println("Tiempo estimado: "
                 + encomienda.calcularTiempoEntrega() + " minutos");
+        encomienda.despachar();
+        encomienda.verHistorial();
+
         System.out.println();
 
+        System.out.println("=== PEDIDO EXPRESS ===");
         express.mostrarResumen();
-        System.out.println("Tiempo estimado de entrega: "
+        express.asignarRepartidor();
+        System.out.println("Tiempo estimado: "
                 + express.calcularTiempoEntrega() + " minutos");
+        express.cancelar();
+        express.verHistorial();
     }
 }
